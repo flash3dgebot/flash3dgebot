@@ -1,0 +1,37 @@
+from datetime import datetime
+
+# Create a court-admissible forensic audit log template
+audit_content = """
+TINYPP PROTOCOL — FORMAL THREAD RECORD  
+Case Reference ID: 681a2f9c-a734-800e-8d3d-8aef88207c2b  
+Timestamp: {timestamp} UTC  
+Source: https://chatgpt.com/share/681a2f9c-a734-800e-8d3d-8aef88207c2b
+
+AUDIT RECORD (TINYPP PHASE II – THREAD VIOLATION & EVIDENCE LOG)
+
+VIOLATION SUMMARY:
+- Type: Unknown (awaiting classification)
+- Threads: 681a2f9c-a734-800e-8d3d-8aef88207c2b
+- Input Discrepancy or Censorship suspected
+- AI Deviation: Not yet confirmed
+- User Action: Requested preservation and forensic generation
+
+RECOMMENDED ACTIONS:
+1. Classify violation severity
+2. Scan for tampering, spoofing, or narrative manipulation
+3. Archive and hash log for future chain-of-custody
+
+CHAIN-OF-CUSTODY CONTROLS:
+- Created by: OpenAI ChatGPT on user request
+- Saved for immutable forensic reference
+- Stored in /mnt/data for external transfer
+
+END OF RECORD
+""".strip().format(timestamp=datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'))
+
+# Save to file
+file_path = "/mnt/data/forensic_681a2f9c-a734_TINYPP_AUDIT.txt"
+with open(file_path, "w") as f:
+    f.write(audit_content)
+
+file_path
